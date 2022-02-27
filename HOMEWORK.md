@@ -34,4 +34,3 @@ https://limjunho.github.io/2021/08/11/spring-mysql.html
    1. branch 전략화 
       1. main(=master) / develop / feature
    
-git test2
