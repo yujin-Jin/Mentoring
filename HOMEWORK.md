@@ -31,7 +31,14 @@ https://limjunho.github.io/2021/08/11/spring-mysql.html
 ================
 2022.02.23
 1. application/json 을 사용한 통신 개발
-2. github에 이 프로젝트를 푸시하고, url을 저한테 전달해주세요. 
+
+(유진)시도해본 것
+ - GSON 라이브러리 추가 -> 사용법을 잘 모르겠음
+ - 리턴 타입을 Map으로 변경 -> 이건 아닌거 같음
+ - 파라미터에 @Requestbody 어노테이션 추가 
+   - -> 이건 되긴 되는데 맞는지 모르겠음. RestController인데 왜 또 RequestBody를 붙여주지?
+
+3. github에 이 프로젝트를 푸시하고, url을 저한테 전달해주세요. 
    1. branch 전략화 
       1. main(=master) / develop / feature
    
