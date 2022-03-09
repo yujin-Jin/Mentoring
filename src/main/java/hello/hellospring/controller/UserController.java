@@ -1,6 +1,8 @@
 package hello.hellospring.controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import hello.hellospring.dto.UserDto;
 import hello.hellospring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +27,16 @@ public class UserController {
     // 유저 추가
     @PostMapping("/user")
     public Map<String, Object> addUser(
-            @RequestBody UserDto userDto
+            UserDto userDto
     ) {
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("result", true);
+        Gson gson = new Gson();
 
         userService.addUser(userDto);
+        String user = gson.toJson(userDto);
 
+        Map<String, Object> map = new HashMap<>();
+        map.put("result", user);
         map.put("message", "유저가 추가됨");
 
         return map;

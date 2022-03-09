@@ -10,6 +10,7 @@ spring:
       filter:
         enabled: true
 
+
 # mybatis
 mybatis:
   config: mybatis-config.xml
