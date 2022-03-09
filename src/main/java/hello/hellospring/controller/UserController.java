@@ -8,6 +8,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class UserController {
@@ -22,11 +24,18 @@ public class UserController {
 
     // 유저 추가
     @PostMapping("/user")
-    public String addUser(
-            UserDto userDto
+    public Map<String, Object> addUser(
+            @RequestBody UserDto userDto
     ) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("result", true);
+
         userService.addUser(userDto);
-        return "유저가 추가됨";
+
+        map.put("message", "유저가 추가됨");
+
+        return map;
     }
 
     // 유저 조회

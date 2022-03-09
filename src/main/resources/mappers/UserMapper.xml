@@ -21,14 +21,14 @@
         VALUES
         (
         #{userDto.name}
-        ,#{userDto.birthDay}
+        ,#{userDto.birth_day}
         )
     </insert>
     <update id="updateUser">
         UPDATE user
         SET
         `name` = #{userDto.name}
-        , `birth_day` = #{userDto.birthDay}
+        , `birth_day` = #{userDto.birth_day}
         WHERE
             `id` = #{userDto.id}
     </update>
