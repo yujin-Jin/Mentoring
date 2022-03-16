@@ -5,33 +5,21 @@ import hello.hellospring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class UserController {
-    /**
-     * 1. 유저 추가 -> index 자동 추가
-     * 2. 유저 조회
-     * 3. 유저 수정
-     * 4. 유저 삭제
-     */
     @Autowired
     private UserService userService;
 
     // 유저 추가
     @PostMapping("/user")
-    public Map<String, Object> addUser(
+    public String addUser(
             @RequestBody UserDto userDto
     ) {
         userService.addUser(userDto);
 
-        Map<String, Object> map = new HashMap<>();
-        map.put("result", true);
-        map.put("message", "유저가 추가됨");
-
-        return map;
+        return "유저가 추가됨";
     }
 
     // 유저 조회
