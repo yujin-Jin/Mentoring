@@ -44,4 +44,17 @@ https://limjunho.github.io/2021/08/11/spring-mysql.html
 3. github에 이 프로젝트를 푸시하고, url을 저한테 전달해주세요. 
    1. branch 전략화 
       1. main(=master) / develop / feature
-   
+      
+
+===========================
+2022.03.16
+1. snake case to camel case
+    case 1 : https://www.baeldung.com/jackson-deserialize-snake-to-camel-case (feature/jackson)
+    case 2 : Interceptor > reqeust 들어오면 camel case 변환 (feature/interceptor) https://www.baeldung.com/java-string-to-camel-case
+2. db <-> server snake case to camel case 
+3. 가고 싶은 회사 찾아오기 
+4. rdbms join 개념에 대해서 스터디하고 포스팅 
+```sql
+select * from users where name = "진유진"; > index 타지 않는다.
+select * from users where id = 1; > index 탄다. 
+```

@@ -16,5 +16,5 @@ public class UserDto {
     private int id;
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate birth_day;
+    private LocalDate birthDay;
 }
