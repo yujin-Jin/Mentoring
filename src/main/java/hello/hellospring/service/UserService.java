@@ -5,6 +5,8 @@ import hello.hellospring.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -17,9 +19,9 @@ public class UserService {
     }
 
     // 유저 조회
-    public UserDto getUser(int id) {
+    public List<UserDto> getUser() {
 
-        return userDao.selectUser(id);
+        return userDao.selectUser();
     }
 
     // 유저 수정

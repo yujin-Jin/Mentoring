@@ -9,8 +9,6 @@
         , `name`
         , `birth_day`
         FROM user
-        WHERE
-        `id` = #{id}
     </select>
     <insert id="insertUser">
         INSERT INTO user

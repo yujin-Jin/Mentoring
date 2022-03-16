@@ -1,16 +1,12 @@
 package hello.hellospring.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import hello.hellospring.dto.UserDto;
 import hello.hellospring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -27,33 +23,27 @@ public class UserController {
     // 유저 추가
     @PostMapping("/user")
     public Map<String, Object> addUser(
-            UserDto userDto
+            @RequestBody UserDto userDto
     ) {
-
-        Gson gson = new Gson();
-
         userService.addUser(userDto);
-        String user = gson.toJson(userDto);
 
         Map<String, Object> map = new HashMap<>();
-        map.put("result", user);
+        map.put("result", true);
         map.put("message", "유저가 추가됨");
 
         return map;
     }
 
     // 유저 조회
-    @GetMapping("/user/{id}")
-    public UserDto searchUser(
-            @PathVariable("id") int id
-    ) {
-        return userService.getUser(id);
+    @GetMapping("/user")
+    public List<UserDto> searchUser() {
+        return userService.getUser();
     }
 
     // 유저 수정
     @PutMapping("/user")
     public String updateUser(
-            UserDto userDto
+            @RequestBody UserDto userDto
     ) {
         userService.updateUser(userDto);
 
