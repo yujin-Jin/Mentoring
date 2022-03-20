@@ -58,3 +58,4 @@ https://limjunho.github.io/2021/08/11/spring-mysql.html
 select * from users where name = "진유진"; > index 타지 않는다.
 select * from users where id = 1; > index 탄다. 
 ```
+5. feature -? feature/기능명 으로 네이밍 변경
