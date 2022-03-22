@@ -17,6 +17,7 @@ public class UserController {
     public String addUser(
             @RequestBody UserDto userDto
     ) {
+
         userService.addUser(userDto);
 
         return "유저가 추가됨";

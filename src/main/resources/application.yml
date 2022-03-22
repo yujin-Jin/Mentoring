@@ -9,7 +9,8 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-
+  jackson:
+    property-naming-strategy: SNAKE_CASE
 
 # mybatis
 mybatis:
